@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+  <style>
+    body { margin:0; background:#F9FAFB; font-family:'Inter',system-ui,sans-serif; color:#1E293B; }
+    ::-webkit-scrollbar { width:10px; height:10px; }
+    ::-webkit-scrollbar-thumb { background:#E2E8F0; border-radius:4px; }
+    a { color:#1E3A8A; }
+    a:hover { color:#06B6D4; }
+  </style>
+</helmet>
+
+<div style="display:flex; height:100vh; background:#F9FAFB; color:#1E293B; font-family:'Inter',system-ui,sans-serif; overflow:hidden;">
+
+  <!-- Sidebar -->
+  <div style="width:232px; flex:none; display:flex; flex-direction:column; gap:20px; padding:20px 14px; border-right:1px solid #E5E7EB; background:#FFFFFF;">
+    <div style="display:flex; align-items:center; gap:10px; padding:0 8px 16px; border-bottom:1px solid #E5E7EB;">
+      <svg width="26" height="16" viewBox="0 0 130 80" fill="none" style="flex:none;"><path d="M14 14 H48 M14 14 V66 M14 40 H38 M14 66 H48" stroke="#1E3A8A" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 16 A24 24 0 1 0 100 64" stroke="#1E3A8A" stroke-width="15" stroke-linecap="round" fill="none"></path><circle cx="38" cy="40" r="6" fill="#06B6D4"></circle></svg>
+      <div>
+        <div style="font-size:15px; line-height:1.15; font-weight:700; letter-spacing:-0.01em;">EduCore<span style="font-family:'JetBrains Mono',monospace; color:#06B6D4; font-size:12px; margin-left:1px;">OS</span></div>
+        <div style="font-size:11px; color:#64748B;">Graceland Int'l Academy</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:2px;">
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:600; background:#EFF6FF; color:#1E3A8A;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M9 21v-6h6v6"></path></svg>
+        <span>My Classes</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:500; color:#475569;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 12l2.5 2.5L16 9"></path></svg>
+        <span>Attendance</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:500; color:#475569;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Assessments</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:500; color:#475569;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <span>Students</span>
+      </div>
+    </div>
+    <div style="margin-top:auto; padding:14px; border-radius:6px; background:#EFF6FF; border:1px solid #DBEAFE;">
+      <div style="font-size:12px; color:#1E3A8A; font-weight:600; margin-bottom:2px;">Term 2 · Week 12</div>
+      <div style="font-size:11px; color:#3B5BAE;">4 periods scheduled today</div>
+    </div>
+  </div>
+
+  <!-- Main column -->
+  <div style="flex:1; display:flex; flex-direction:column; min-width:0; overflow:hidden;">
+
+    <!-- Header -->
+    <div style="display:flex; align-items:center; gap:12px; padding:14px 24px; border-bottom:1px solid #E5E7EB; flex:none; background:#FFFFFF;">
+      <button style="font:inherit; font-size:13px; padding:7px 14px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; color:#1E293B; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">Term 2, 2025/26 <span style="opacity:0.45;">▾</span></button>
+      <div style="flex:1; max-width:340px; position:relative; margin-left:8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" style="position:absolute; left:12px; top:50%; transform:translateY(-50%);"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+        <input placeholder="Search students, classes…" style="width:100%; box-sizing:border-box; padding:8px 12px 8px 34px; font:inherit; font-size:13px; border-radius:6px; border:1px solid #E5E7EB; background:#F9FAFB; color:#1E293B;"></input>
+      </div>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:10px;">
+        <div style="width:34px; height:34px; border-radius:6px; background:#1E3A8A; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:12px; color:#fff; font-weight:600;">IN</div>
+        <div style="font-size:13px; line-height:1.2;">
+          <div style="font-weight:600;">Mrs. Ijeoma Nwosu</div>
+          <div style="color:#64748B; font-size:11px;">Class Teacher, JSS 1A</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <div style="flex:1; overflow-y:auto; padding:22px 24px 40px;">
+
+      <div style="margin-bottom:20px;">
+        <h2 style="margin:0 0 2px; font-size:22px; font-weight:700; letter-spacing:-0.01em;">Good morning, Mrs. Nwosu</h2>
+        <div style="font-size:13px; color:#64748B;">Monday, 03 August 2026 · You have {{ pendingCount }} tasks needing attention</div>
+      </div>
+
+      <!-- Today's schedule -->
+      <div style="margin-bottom:22px;">
+        <div style="font-size:15px; font-weight:600; margin-bottom:10px;">Today's schedule</div>
+        <div style="display:flex; gap:10px; overflow-x:auto;">
+          <sc-for list="{{ schedule }}" as="p" hint-placeholder-count="4">
+            <div style="flex:none; width:220px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:14px;">
+              <div style="font-size:11px; font-family:'JetBrains Mono',monospace; color:#94A3B8; margin-bottom:6px;">{{ p.time }}</div>
+              <div style="font-size:14px; font-weight:700; margin-bottom:2px;">{{ p.subject }}</div>
+              <div style="font-size:12.5px; color:#64748B; margin-bottom:10px;">{{ p.className }}</div>
+              <span style="font-size:11px; font-weight:600; padding:3px 9px; border-radius:4px; background:{{ p.bg }}; color:{{ p.text }};">{{ p.status }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- My classes -->
+      <div style="margin-bottom:22px;">
+        <div style="font-size:15px; font-weight:600; margin-bottom:10px;">My classes</div>
+        <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px;">
+          <sc-for list="{{ classes }}" as="c" hint-placeholder-count="3">
+            <div style="min-width:0; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:18px; display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; align-items:center; justify-content:space-between;">
+                <div style="font-size:16px; font-weight:700;">{{ c.className }}</div>
+                <sc-if value="{{ c.isOwn }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size:10.5px; font-weight:600; padding:3px 8px; border-radius:4px; background:#EEF2FF; color:#4338CA;">Class teacher</span>
+                </sc-if>
+              </div>
+              <div style="font-size:13px; color:#64748B;">{{ c.subject }} · {{ c.studentCount }} students</div>
+              <div style="display:flex; gap:8px; margin-top:4px;">
+                <button style="flex:1; min-width:0; font:inherit; font-size:12.5px; font-weight:600; padding:8px 6px; border-radius:6px; border:none; background:#1E3A8A; color:#fff; cursor:pointer;">Take attendance</button>
+                <button style="flex:1; min-width:0; font:inherit; font-size:12.5px; font-weight:600; padding:8px 6px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; color:#1E293B; cursor:pointer;">Assessments</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- Pending tasks -->
+      <div>
+        <div style="font-size:15px; font-weight:600; margin-bottom:10px;">Needs your attention</div>
+        <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; overflow:hidden;">
+          <sc-for list="{{ tasks }}" as="t" hint-placeholder-count="4">
+            <div style="display:flex; align-items:center; gap:12px; padding:13px 16px; border-bottom:1px solid #F1F5F9;">
+              <div style="width:8px; height:8px; border-radius:999px; background:{{ t.dot }}; flex:none;"></div>
+              <div style="flex:1;">
+                <div style="font-size:13.5px; font-weight:600;">{{ t.title }}</div>
+                <div style="font-size:12px; color:#64748B;">{{ t.subtitle }}</div>
+              </div>
+              <span style="font-size:11px; font-weight:600; padding:3px 9px; border-radius:4px; background:{{ t.bg }}; color:{{ t.text }};">{{ t.status }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SCHEDULE = [
+  { time: '08:00 – 08:40', subject: 'Mathematics', className: 'JSS 1A', status: 'Attendance taken', bg: '#ECFDF5', text: '#047857' },
+  { time: '09:20 – 10:00', subject: 'Mathematics', className: 'JSS 2B', status: 'Attendance taken', bg: '#ECFDF5', text: '#047857' },
+  { time: '11:00 – 11:40', subject: 'Mathematics', className: 'JSS 3A', status: 'Not yet taken', bg: '#FFFBEB', text: '#B45309' },
+  { time: '13:20 – 14:00', subject: 'Mathematics', className: 'JSS 1A', status: 'Upcoming', bg: '#F1F5F9', text: '#64748B' },
+];
+
+const CLASSES = [
+  { className: 'JSS 1A', subject: 'Mathematics', studentCount: 28, isOwn: true },
+  { className: 'JSS 2B', subject: 'Mathematics', studentCount: 30, isOwn: false },
+  { className: 'JSS 3A', subject: 'Mathematics', studentCount: 26, isOwn: false },
+];
+
+const TASKS = [
+  { title: 'Take attendance — JSS 3A, 11:00 period', subtitle: 'Not yet submitted today', status: 'Due now', bg: '#FFF1F2', text: '#BE123C', dot: '#F43F5E' },
+  { title: 'Enter scores — Weekly Test 3, JSS 2B', subtitle: '12 of 30 students scored', status: 'In progress', bg: '#FFFBEB', text: '#B45309', dot: '#F59E0B' },
+  { title: 'Submit Mid-Term Exam — JSS 1A', subtitle: 'All scores entered, ready to submit', status: 'Ready', bg: '#EFF6FF', text: '#1E3A8A', dot: '#1E3A8A' },
+  { title: 'Reopened: Weekly Test 2 — JSS 3A', subtitle: 'Rejected by Academic Head — needs correction', status: 'Reopened', bg: '#EEF2FF', text: '#4338CA', dot: '#6366F1' },
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      schedule: SCHEDULE,
+      classes: CLASSES,
+      tasks: TASKS,
+      pendingCount: TASKS.length,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+  <style>
+    body { margin:0; background:#F9FAFB; font-family:'Inter',system-ui,sans-serif; color:#1E293B; }
+    ::-webkit-scrollbar { width:10px; height:10px; }
+    ::-webkit-scrollbar-thumb { background:#E2E8F0; border-radius:4px; }
+    a { color:#1E3A8A; }
+    a:hover { color:#06B6D4; }
+  </style>
+</helmet>
+
+<div style="display:flex; height:100vh; background:#F9FAFB; color:#1E293B; font-family:'Inter',system-ui,sans-serif; overflow:hidden;">
+
+  <!-- Sidebar -->
+  <div style="width:232px; flex:none; display:flex; flex-direction:column; gap:20px; padding:20px 14px; border-right:1px solid #E5E7EB; background:#FFFFFF;">
+    <div style="display:flex; align-items:center; gap:10px; padding:0 8px 16px; border-bottom:1px solid #E5E7EB;">
+      <svg width="26" height="16" viewBox="0 0 130 80" fill="none" style="flex:none;"><path d="M14 14 H48 M14 14 V66 M14 40 H38 M14 66 H48" stroke="#1E3A8A" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 16 A24 24 0 1 0 100 64" stroke="#1E3A8A" stroke-width="15" stroke-linecap="round" fill="none"></path><circle cx="38" cy="40" r="6" fill="#06B6D4"></circle></svg>
+      <div>
+        <div style="font-size:15px; line-height:1.15; font-weight:700; letter-spacing:-0.01em;">EduCore<span style="font-family:'JetBrains Mono',monospace; color:#06B6D4; font-size:12px; margin-left:1px;">OS</span></div>
+        <div style="font-size:11px; color:#64748B;">Graceland Int'l Academy</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:2px;">
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:500; color:#475569;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M9 21v-6h6v6"></path></svg>
+        <span>Dashboard</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:500; color:#475569;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 12l2.5 2.5L16 9"></path></svg>
+        <span>Attendance</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:600; background:#EFF6FF; color:#1E3A8A;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <span>Students</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:500; color:#475569;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Academics</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:500; color:#475569;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
+        <span>Finance</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:11px; padding:9px 12px; border-radius:6px; cursor:pointer; font-size:14px; font-weight:500; color:#475569;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M4 12h16M4 17h10"></path><circle cx="17" cy="7" r="2.2"></circle><circle cx="9" cy="17" r="2.2"></circle></svg>
+        <span>Settings</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main column -->
+  <div style="flex:1; display:flex; flex-direction:column; min-width:0; overflow:hidden;">
+
+    <!-- Header -->
+    <div style="display:flex; align-items:center; gap:12px; padding:14px 24px; border-bottom:1px solid #E5E7EB; flex:none; background:#FFFFFF;">
+      <button style="font:inherit; font-size:13px; padding:7px 14px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; color:#1E293B; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">Term 2, 2025/26 <span style="opacity:0.45;">▾</span></button>
+      <button style="font:inherit; font-size:13px; padding:7px 14px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; color:#1E293B; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">Lekki Campus <span style="opacity:0.45;">▾</span></button>
+      <div style="flex:1; max-width:340px; position:relative; margin-left:8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" style="position:absolute; left:12px; top:50%; transform:translateY(-50%);"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+        <input placeholder="Search students, classes, staff…" style="width:100%; box-sizing:border-box; padding:8px 12px 8px 34px; font:inherit; font-size:13px; border-radius:6px; border:1px solid #E5E7EB; background:#F9FAFB; color:#1E293B;"></input>
+      </div>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:10px;">
+        <div style="width:34px; height:34px; border-radius:6px; background:#1E3A8A; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:12px; color:#fff; font-weight:600;">TF</div>
+        <div style="font-size:13px; line-height:1.2;">
+          <div style="font-weight:600;">Mrs. Titi Falade</div>
+          <div style="color:#64748B; font-size:11px;">School Administrator</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <div style="flex:1; overflow-y:auto; padding:20px 24px 40px;">
+
+      <!-- LIST VIEW -->
+      <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+          <div>
+            <h2 style="margin:0 0 2px; font-size:22px; font-weight:700; letter-spacing:-0.01em;">Students</h2>
+            <div style="font-size:13px; color:#64748B;">{{ totalCount }} students across 24 classes</div>
+          </div>
+          <button onclick="{{ goRegister }}" style="font:inherit; font-size:13.5px; font-weight:600; padding:10px 18px; border-radius:6px; border:none; background:#1E3A8A; color:#fff; cursor:pointer;">+ Register student</button>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-bottom:14px;">
+          <button style="font:inherit; font-size:13px; padding:7px 14px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; cursor:pointer;">All classes <span style="opacity:0.45; margin-left:6px;">▾</span></button>
+          <button style="font:inherit; font-size:13px; padding:7px 14px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; cursor:pointer;">Status: Active <span style="opacity:0.45; margin-left:6px;">▾</span></button>
+          <button style="font:inherit; font-size:13px; padding:7px 14px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; cursor:pointer;">Fees: Any <span style="opacity:0.45; margin-left:6px;">▾</span></button>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; overflow:hidden;">
+          <div style="display:grid; grid-template-columns:40px 2fr 1fr 1fr 1.4fr 1fr 1fr; gap:10px; padding:12px 14px; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; border-bottom:1px solid #E5E7EB;">
+            <div></div><div>Student</div><div>Admission No.</div><div>Class</div><div>Guardian</div><div>Attendance</div><div>Fees</div>
+          </div>
+          <sc-for list="{{ students }}" as="s" hint-placeholder-count="12">
+            <div onclick="{{ s.openProfile }}" style="display:grid; grid-template-columns:40px 2fr 1fr 1fr 1.4fr 1fr 1fr; gap:10px; align-items:center; padding:11px 14px; border-bottom:1px solid #F1F5F9; cursor:pointer;">
+              <div style="width:30px; height:30px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; background:{{ s.avatarBg }}; color:{{ s.avatarText }};">{{ s.initials }}</div>
+              <div style="font-size:14px; font-weight:600;">{{ s.name }}</div>
+              <div style="font-size:12px; font-family:'JetBrains Mono',monospace; color:#64748B;">{{ s.adm }}</div>
+              <div style="font-size:13px;">{{ s.klass }}</div>
+              <div style="font-size:12.5px; color:#475569;">{{ s.guardianName }}</div>
+              <div style="font-size:13px; font-family:'JetBrains Mono',monospace;">{{ s.attendanceRate }}%</div>
+              <div><span style="font-size:11px; font-weight:600; padding:3px 9px; border-radius:4px; background:{{ s.feesBg }}; color:{{ s.feesText }};">{{ s.feesStatus }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <!-- PROFILE VIEW -->
+      <sc-if value="{{ isProfile }}" hint-placeholder-val="{{ false }}">
+        <button onclick="{{ goList }}" style="background:none; border:none; color:#1E3A8A; font-size:13px; font-weight:500; cursor:pointer; padding:0; margin-bottom:14px; font-family:inherit; display:flex; align-items:center; gap:6px;">← Back to students</button>
+
+        <div style="display:flex; gap:16px; align-items:center; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:20px; margin-bottom:16px;">
+          <div style="width:64px; height:64px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:700; background:{{ activeStudent.avatarBg }}; color:{{ activeStudent.avatarText }}; flex:none;">{{ activeStudent.initials }}</div>
+          <div style="flex:1;">
+            <div style="font-size:19px; font-weight:700;">{{ activeStudent.name }}</div>
+            <div style="font-size:13px; color:#64748B;">{{ activeStudent.klass }} · {{ activeStudent.adm }} · {{ activeStudent.gender }}</div>
+          </div>
+          <div style="display:flex; gap:24px;">
+            <div style="text-align:center;"><div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:600;">{{ activeStudent.attendanceRate }}%</div><div style="font-size:11px; color:#94A3B8;">Attendance</div></div>
+            <div style="text-align:center;"><div style="font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:600;">{{ activeStudent.avgGrade }}</div><div style="font-size:11px; color:#94A3B8;">Avg. grade</div></div>
+            <div style="text-align:center;"><span style="font-size:11px; font-weight:600; padding:4px 10px; border-radius:4px; background:{{ activeStudent.feesBg }}; color:{{ activeStudent.feesText }};">{{ activeStudent.feesStatus }}</span><div style="font-size:11px; color:#94A3B8; margin-top:4px;">Fees</div></div>
+          </div>
+        </div>
+
+        <div style="display:inline-flex; border:1px solid #E5E7EB; border-radius:6px; padding:3px; background:#FFFFFF; margin-bottom:16px;">
+          <button onclick="{{ selectOverviewTab }}" style="{{ overviewTabStyle }}">Overview</button>
+          <button onclick="{{ selectAttendanceTab }}" style="{{ attendanceTabStyle }}">Attendance</button>
+          <button onclick="{{ selectAcademicsTab }}" style="{{ academicsTabStyle }}">Academics</button>
+          <button onclick="{{ selectFeesTab }}" style="{{ feesTabStyle }}">Fees</button>
+        </div>
+
+        <sc-if value="{{ isOverviewTab }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+            <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; padding:18px;">
+              <div style="font-size:15px; font-weight:600; margin-bottom:12px;">Guardian information</div>
+              <div style="display:flex; flex-direction:column; gap:10px; font-size:13px;">
+                <div style="display:flex; justify-content:space-between;"><span style="color:#64748B;">Name</span><span style="font-weight:500;">{{ activeStudent.guardianName }}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:#64748B;">Phone</span><span style="font-weight:500; font-family:'JetBrains Mono',monospace;">{{ activeStudent.guardianPhone }}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:#64748B;">Relationship</span><span style="font-weight:500;">{{ activeStudent.guardianRelation }}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:#64748B;">Address</span><span style="font-weight:500; text-align:right;">{{ activeStudent.address }}</span></div>
+              </div>
+            </div>
+            <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; padding:18px;">
+              <div style="font-size:15px; font-weight:600; margin-bottom:12px;">Enrollment details</div>
+              <div style="display:flex; flex-direction:column; gap:10px; font-size:13px;">
+                <div style="display:flex; justify-content:space-between;"><span style="color:#64748B;">Admission date</span><span style="font-weight:500;">{{ activeStudent.admissionDate }}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:#64748B;">Class</span><span style="font-weight:500;">{{ activeStudent.klass }}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:#64748B;">Date of birth</span><span style="font-weight:500;">{{ activeStudent.dob }}</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:#64748B;">Blood group</span><span style="font-weight:500;">{{ activeStudent.bloodGroup }}</span></div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAttendanceTab }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; overflow:hidden;">
+            <div style="font-size:15px; font-weight:600; padding:16px 16px 0;">Attendance history — Term 2</div>
+            <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:10px;">
+              <thead><tr>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Date</th>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Subject</th>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Status</th>
+              </tr></thead>
+              <tbody>
+                <sc-for list="{{ attendanceHistory }}" as="a" hint-placeholder-count="6">
+                  <tr>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9; font-family:'JetBrains Mono',monospace; font-size:12px; color:#64748B;">{{ a.date }}</td>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9;">{{ a.subject }}</td>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9;"><span style="font-size:11px; font-weight:600; padding:3px 9px; border-radius:4px; background:{{ a.bg }}; color:{{ a.text }};">{{ a.status }}</span></td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isAcademicsTab }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; overflow:hidden;">
+            <div style="font-size:15px; font-weight:600; padding:16px 16px 0;">Results — Term 2</div>
+            <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:10px;">
+              <thead><tr>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Subject</th>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Score</th>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Grade</th>
+              </tr></thead>
+              <tbody>
+                <sc-for list="{{ results }}" as="r" hint-placeholder-count="6">
+                  <tr>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9;">{{ r.subject }}</td>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9; font-family:'JetBrains Mono',monospace;">{{ r.score }}</td>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9; font-weight:600; color:#1E3A8A;">{{ r.grade }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isFeesTab }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; overflow:hidden;">
+            <div style="font-size:15px; font-weight:600; padding:16px 16px 0;">Payment history</div>
+            <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:10px;">
+              <thead><tr>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Date</th>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Description</th>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Amount</th>
+                <th style="text-align:left; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:8px 16px; border-bottom:1px solid #E5E7EB;">Status</th>
+              </tr></thead>
+              <tbody>
+                <sc-for list="{{ payments }}" as="p" hint-placeholder-count="4">
+                  <tr>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9; font-family:'JetBrains Mono',monospace; font-size:12px; color:#64748B;">{{ p.date }}</td>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9;">{{ p.desc }}</td>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9; font-family:'JetBrains Mono',monospace;">{{ p.amount }}</td>
+                    <td style="padding:10px 16px; border-bottom:1px solid #F1F5F9;"><span style="font-size:11px; font-weight:600; padding:3px 9px; border-radius:4px; background:{{ p.bg }}; color:{{ p.text }};">{{ p.status }}</span></td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </sc-if>
+      </sc-if>
+
+      <!-- REGISTRATION VIEW -->
+      <sc-if value="{{ isRegister }}" hint-placeholder-val="{{ false }}">
+        <button onclick="{{ goList }}" style="background:none; border:none; color:#1E3A8A; font-size:13px; font-weight:500; cursor:pointer; padding:0; margin-bottom:14px; font-family:inherit;">← Back to students</button>
+        <h2 style="margin:0 0 16px; font-size:22px; font-weight:700; letter-spacing:-0.01em;">Register new student</h2>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:900px;">
+          <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; padding:18px; grid-column:1 / -1;">
+            <div style="font-size:15px; font-weight:600; margin-bottom:14px;">Personal information</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Full name</label><input placeholder="e.g. Chinedu Okafor" style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Date of birth</label><input type="date" style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Gender</label><select style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"><option>Female</option><option>Male</option></select></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Blood group</label><input placeholder="e.g. O+" style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            </div>
+          </div>
+
+          <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; padding:18px; grid-column:1 / -1;">
+            <div style="font-size:15px; font-weight:600; margin-bottom:14px;">Academic placement</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Class</label><select style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"><option>JSS 1A</option><option>JSS 2B</option><option>SSS 1C</option></select></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Admission date</label><input type="date" style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            </div>
+          </div>
+
+          <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:6px; padding:18px; grid-column:1 / -1;">
+            <div style="font-size:15px; font-weight:600; margin-bottom:14px;">Guardian information</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Guardian name</label><input placeholder="e.g. Mrs. Ngozi Okafor" style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Phone number</label><input placeholder="080X XXX XXXX" style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+              <div style="display:flex; flex-direction:column; gap:5px; grid-column:1 / -1;"><label style="font-size:12px; color:#475569; font-weight:500;">Home address</label><input placeholder="Street, city, state" style="padding:9px 12px; font:inherit; font-size:13.5px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            </div>
+          </div>
+
+          <div style="grid-column:1 / -1; display:flex; justify-content:flex-end; gap:10px;">
+            <button onclick="{{ goList }}" style="font:inherit; font-size:13.5px; font-weight:500; padding:10px 18px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; cursor:pointer;">Cancel</button>
+            <button onclick="{{ goList }}" style="font:inherit; font-size:13.5px; font-weight:600; padding:10px 22px; border-radius:6px; border:none; background:#1E3A8A; color:#fff; cursor:pointer;">Save student</button>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NAMES = [
+  { name: 'Chidinma Okeke', klass: 'JSS 2B', gender: 'Female', guardianName: 'Mrs. Amaka Okeke', guardianPhone: '0803 221 4459', feesStatus: 'Paid', att: 98, grade: 'A' },
+  { name: 'Emeka Obi', klass: 'JSS 1A', gender: 'Male', guardianName: 'Mr. Peter Obi', guardianPhone: '0802 114 8823', feesStatus: 'Pending', att: 91, grade: 'B+' },
+  { name: 'Fatima Bello', klass: 'SSS 1C', gender: 'Female', guardianName: 'Alhaji Musa Bello', guardianPhone: '0806 552 9910', feesStatus: 'Paid', att: 96, grade: 'A-' },
+  { name: 'Tobenna Anya', klass: 'JSS 1A', gender: 'Male', guardianName: 'Mrs. Chioma Anya', guardianPhone: '0813 774 2201', feesStatus: 'Overdue', att: 84, grade: 'C+' },
+  { name: 'Aisha Yusuf', klass: 'JSS 2B', gender: 'Female', guardianName: 'Mr. Ibrahim Yusuf', guardianPhone: '0705 332 1187', feesStatus: 'Paid', att: 99, grade: 'A' },
+  { name: 'Kelechi Nwachukwu', klass: 'SSS 2A', gender: 'Male', guardianName: 'Mrs. Ijeoma Nwachukwu', guardianPhone: '0902 665 3390', feesStatus: 'Paid', att: 93, grade: 'B' },
+  { name: 'Amara Nwosu', klass: 'SSS 1C', gender: 'Female', guardianName: 'Mr. Emeka Nwosu', guardianPhone: '0817 220 4471', feesStatus: 'Pending', att: 88, grade: 'B-' },
+  { name: 'David Adeyemi', klass: 'JSS 3A', gender: 'Male', guardianName: 'Mrs. Bukola Adeyemi', guardianPhone: '0701 998 3345', feesStatus: 'Paid', att: 95, grade: 'A-' },
+  { name: 'Grace Effiong', klass: 'JSS 2B', gender: 'Female', guardianName: 'Mr. Sunday Effiong', guardianPhone: '0809 441 7723', feesStatus: 'Paid', att: 97, grade: 'A' },
+  { name: 'Ibrahim Sani', klass: 'SSS 2A', gender: 'Male', guardianName: 'Alhaja Zainab Sani', guardianPhone: '0812 336 9982', feesStatus: 'Overdue', att: 79, grade: 'C' },
+  { name: 'Chinedu Okafor', klass: 'SSS 1C', gender: 'Male', guardianName: 'Mrs. Ngozi Okafor', guardianPhone: '0803 771 5502', feesStatus: 'Paid', att: 90, grade: 'B+' },
+  { name: 'Blessing Etim', klass: 'JSS 1A', gender: 'Female', guardianName: 'Mr. Godwin Etim', guardianPhone: '0706 552 8814', feesStatus: 'Paid', att: 94, grade: 'B+' },
+];
+
+const AVATAR_TINTS = [
+  { bg: '#EFF6FF', text: '#1E3A8A' },
+  { bg: '#ECFEFF', text: '#0E7490' },
+  { bg: '#F1F5F9', text: '#334155' },
+];
+
+const FEES_COLORS = {
+  Paid: { bg: '#ECFDF5', text: '#047857' },
+  Pending: { bg: '#FFFBEB', text: '#B45309' },
+  Overdue: { bg: '#FFF1F2', text: '#BE123C' },
+};
+
+function initials(name) {
+  return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+}
+
+class Component extends DCLogic {
+  state = { view: 'list', selectedId: 0, profileTab: 'overview' };
+
+  renderVals() {
+    const { view, selectedId, profileTab } = this.state;
+
+    const richStudents = NAMES.map((s, i) => {
+      const tint = AVATAR_TINTS[i % AVATAR_TINTS.length];
+      const fee = FEES_COLORS[s.feesStatus];
+      return {
+        id: i,
+        ...s,
+        adm: 'GIA-' + s.klass.replace(' ', '') + '-' + String(114 + i).padStart(3, '0'),
+        initials: initials(s.name),
+        avatarBg: tint.bg,
+        avatarText: tint.text,
+        attendanceRate: s.att,
+        avgGrade: s.grade,
+        feesBg: fee.bg,
+        feesText: fee.text,
+        guardianRelation: i % 2 === 0 ? 'Mother' : 'Father',
+        address: i % 2 === 0 ? '14 Admiralty Way, Lekki, Lagos' : '22 Freedom Way, Lekki, Lagos',
+        admissionDate: 'Sep 09, 2023',
+        dob: 'Mar 14, 2013',
+        bloodGroup: i % 3 === 0 ? 'O+' : 'A+',
+        openProfile: () => this.setState({ view: 'profile', selectedId: i, profileTab: 'overview' }),
+      };
+    });
+
+    const activeStudent = richStudents[selectedId] || richStudents[0];
+
+    const tabBase = 'font:inherit;font-size:12.5px;padding:6px 14px;border-radius:5px;border:none;cursor:pointer;';
+    const styleFor = (key) => tabBase + (profileTab === key ? 'background:#1E3A8A;color:#fff;font-weight:600;' : 'background:transparent;color:#475569;');
+
+    const attendanceHistory = [
+      { date: '01 Aug', subject: 'Mathematics', status: 'Present', bg: '#ECFDF5', text: '#047857' },
+      { date: '31 Jul', subject: 'English', status: 'Present', bg: '#ECFDF5', text: '#047857' },
+      { date: '30 Jul', subject: 'Basic Science', status: 'Late', bg: '#FFFBEB', text: '#B45309' },
+      { date: '29 Jul', subject: 'Mathematics', status: 'Present', bg: '#ECFDF5', text: '#047857' },
+      { date: '28 Jul', subject: 'Social Studies', status: 'Absent', bg: '#FFF1F2', text: '#BE123C' },
+      { date: '25 Jul', subject: 'English', status: 'Present', bg: '#ECFDF5', text: '#047857' },
+    ];
+
+    const results = [
+      { subject: 'Mathematics', score: '84 / 100', grade: 'A' },
+      { subject: 'English Language', score: '76 / 100', grade: 'B+' },
+      { subject: 'Basic Science', score: '71 / 100', grade: 'B' },
+      { subject: 'Social Studies', score: '88 / 100', grade: 'A' },
+      { subject: 'Civic Education', score: '69 / 100', grade: 'B-' },
+    ];
+
+    const payments = [
+      { date: '02 Aug 2026', desc: 'Term 2 fees — final tranche', amount: '₦95,000', status: 'Paid', bg: '#ECFDF5', text: '#047857' },
+      { date: '10 Jun 2026', desc: 'Term 2 fees — first tranche', amount: '₦90,000', status: 'Paid', bg: '#ECFDF5', text: '#047857' },
+      { date: '05 Mar 2026', desc: 'Term 1 fees — full payment', amount: '₦185,000', status: 'Paid', bg: '#ECFDF5', text: '#047857' },
+      { date: '—', desc: 'Excursion fee — Term 2', amount: '₦12,000', status: 'Pending', bg: '#FFFBEB', text: '#B45309' },
+    ];
+
+    return {
+      isList: view === 'list',
+      isProfile: view === 'profile',
+      isRegister: view === 'register',
+      totalCount: richStudents.length,
+      students: richStudents,
+      activeStudent,
+      goList: () => this.setState({ view: 'list' }),
+      goRegister: () => this.setState({ view: 'register' }),
+      isOverviewTab: profileTab === 'overview',
+      isAttendanceTab: profileTab === 'attendance',
+      isAcademicsTab: profileTab === 'academics',
+      isFeesTab: profileTab === 'fees',
+      overviewTabStyle: styleFor('overview'),
+      attendanceTabStyle: styleFor('attendance'),
+      academicsTabStyle: styleFor('academics'),
+      feesTabStyle: styleFor('fees'),
+      selectOverviewTab: () => this.setState({ profileTab: 'overview' }),
+      selectAttendanceTab: () => this.setState({ profileTab: 'attendance' }),
+      selectAcademicsTab: () => this.setState({ profileTab: 'academics' }),
+      selectFeesTab: () => this.setState({ profileTab: 'fees' }),
+      attendanceHistory,
+      results,
+      payments,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

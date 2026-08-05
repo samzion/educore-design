@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+  <style>
+    body { margin:0; background:#F9FAFB; font-family:'Inter',system-ui,sans-serif; color:#1E293B; }
+    ::-webkit-scrollbar { width:10px; height:10px; }
+    ::-webkit-scrollbar-thumb { background:#E2E8F0; border-radius:4px; }
+  </style>
+</helmet>
+
+<div style="display:flex; min-height:100vh; background:#F9FAFB; color:#1E293B; font-family:'Inter',system-ui,sans-serif;">
+
+  <!-- Progress rail -->
+  <div style="width:280px; flex:none; background:#FFFFFF; border-right:1px solid #E5E7EB; padding:28px 24px; display:flex; flex-direction:column; gap:24px;">
+    <div style="display:flex; align-items:center; gap:9px;">
+      <svg width="24" height="15" viewBox="0 0 130 80" fill="none"><path d="M14 14 H48 M14 14 V66 M14 40 H38 M14 66 H48" stroke="#1E3A8A" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"></path><path d="M100 16 A24 24 0 1 0 100 64" stroke="#1E3A8A" stroke-width="15" stroke-linecap="round" fill="none"></path><circle cx="38" cy="40" r="6" fill="#06B6D4"></circle></svg>
+      <span style="font-size:15px; font-weight:700; letter-spacing:-0.01em;">EduCore<span style="font-family:'JetBrains Mono',monospace; color:#06B6D4; font-size:11px;">OS</span></span>
+    </div>
+    <div>
+      <div style="font-size:16px; font-weight:700; margin-bottom:2px;">Set up your school</div>
+      <div style="font-size:12.5px; color:#64748B;">Graceland International Academy</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:2px;">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+        <div style="display:flex; align-items:center; gap:12px; padding:10px 10px; border-radius:6px; background:{{ s.bg }};">
+          <div style="width:24px; height:24px; border-radius:999px; flex:none; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; background:{{ s.dotBg }}; color:{{ s.dotText }};">{{ s.dotContent }}</div>
+          <div>
+            <div style="font-size:13px; font-weight:600; color:{{ s.textColor }};">{{ s.label }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:auto; font-size:12px; color:#94A3B8;">Step {{ currentStep }} of 5</div>
+  </div>
+
+  <!-- Content -->
+  <div style="flex:1; display:flex; flex-direction:column;">
+    <div style="flex:1; overflow-y:auto; padding:48px 56px;">
+      <div style="max-width:640px;">
+
+        <!-- STEP 1: SCHOOL PROFILE -->
+        <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+          <h2 style="margin:0 0 4px; font-size:24px; font-weight:700; letter-spacing:-0.01em;">School profile</h2>
+          <div style="font-size:13.5px; color:#64748B; margin-bottom:24px;">This is what appears on report cards, invoices, and staff logins.</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+            <div style="display:flex; flex-direction:column; gap:5px; grid-column:1 / -1;"><label style="font-size:12px; color:#475569; font-weight:500;">School name</label><input value="Graceland International Academy" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            <div style="display:flex; flex-direction:column; gap:5px; grid-column:1 / -1;"><label style="font-size:12px; color:#475569; font-weight:500;">Street address</label><input value="12 Admiralty Way" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">City</label><input value="Lekki" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">State</label><input value="Lagos" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Country</label><input value="Nigeria" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Admission code prefix</label><input value="GIA" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB; font-family:'JetBrains Mono',monospace;"></input></div>
+          </div>
+          <div style="margin-top:14px; padding:12px 14px; border-radius:6px; background:#EFF6FF; font-size:12.5px; color:#1E3A8A;">Admission numbers will be generated as <span style="font-family:'JetBrains Mono',monospace; font-weight:600;">GIA/26/0001</span>, GIA/26/0002, and so on.</div>
+        </sc-if>
+
+        <!-- STEP 2: SESSION & TERM -->
+        <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:0 0 4px; font-size:24px; font-weight:700; letter-spacing:-0.01em;">Academic session &amp; term</h2>
+          <div style="font-size:13.5px; color:#64748B; margin-bottom:24px;">Every class, assessment, and attendance record belongs to a session and term.</div>
+          <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:20px; margin-bottom:14px;">
+            <div style="font-size:14px; font-weight:600; margin-bottom:12px;">Session</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+              <div style="display:flex; flex-direction:column; gap:5px; grid-column:1 / -1;"><label style="font-size:12px; color:#475569; font-weight:500;">Label</label><input value="2025/2026" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Start date</label><input type="date" value="2025-09-08" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">End date</label><input type="date" value="2026-07-24" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            </div>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:20px;">
+            <div style="font-size:14px; font-weight:600; margin-bottom:12px;">First term</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Name</label><input value="Term 1" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">Start date</label><input type="date" value="2025-09-08" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+              <div style="display:flex; flex-direction:column; gap:5px;"><label style="font-size:12px; color:#475569; font-weight:500;">End date</label><input type="date" value="2025-12-12" style="padding:10px 12px; font:inherit; font-size:14px; border-radius:6px; border:1px solid #E5E7EB;"></input></div>
+            </div>
+            <div style="margin-top:12px; font-size:12px; color:#94A3B8;">You can add Term 2 and Term 3 later from Academics → Settings.</div>
+          </div>
+        </sc-if>
+
+        <!-- STEP 3: CLASS GROUPS -->
+        <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:0 0 4px; font-size:24px; font-weight:700; letter-spacing:-0.01em;">Class groups</h2>
+          <div style="font-size:13.5px; color:#64748B; margin-bottom:24px;">Add each education level your school runs, and the arms (streams) within it.</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <sc-for list="{{ levelDrafts }}" as="lvl" hint-placeholder-count="4">
+              <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:16px 18px; display:flex; align-items:center; gap:14px;">
+                <div style="font-size:14px; font-weight:600; width:150px; flex:none;">{{ lvl.name }}</div>
+                <div style="display:flex; gap:6px; flex-wrap:wrap; flex:1;">
+                  <sc-for list="{{ lvl.arms }}" as="arm" hint-placeholder-count="2">
+                    <span style="font-size:12.5px; font-weight:600; padding:5px 12px; border-radius:999px; background:#EFF6FF; color:#1E3A8A;">{{ lvl.name }} {{ arm }}</span>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+            <button style="align-self:flex-start; font:inherit; font-size:13px; font-weight:600; padding:9px 16px; border-radius:6px; border:1px dashed #CBD5E1; background:#FFFFFF; color:#1E3A8A; cursor:pointer;">+ Add education level</button>
+          </div>
+          <div style="margin-top:16px; padding:12px 14px; border-radius:6px; background:#F9FAFB; border:1px solid #E5E7EB; font-size:12.5px; color:#64748B;">{{ classCount }} class groups will be created for 2025/2026.</div>
+        </sc-if>
+
+        <!-- STEP 4: IMPORT STUDENTS -->
+        <sc-if value="{{ isStep4 }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:0 0 4px; font-size:24px; font-weight:700; letter-spacing:-0.01em;">Import students</h2>
+          <div style="font-size:13.5px; color:#64748B; margin-bottom:24px;">Upload a spreadsheet of your existing student roster. We'll check it before anything is saved.</div>
+
+          <div style="border:2px dashed #CBD5E1; border-radius:8px; padding:32px; text-align:center; background:#FFFFFF; margin-bottom:16px;">
+            <div style="font-size:14px; font-weight:600; margin-bottom:4px;">{{ fileName }}</div>
+            <div style="font-size:12.5px; color:#94A3B8; margin-bottom:14px;">CSV or XLSX, up to 2,000 rows</div>
+            <button onclick="{{ runDryRun }}" style="font:inherit; font-size:13px; font-weight:600; padding:9px 18px; border-radius:6px; border:none; background:#1E3A8A; color:#fff; cursor:pointer;">Run check (dry run)</button>
+          </div>
+
+          <sc-if value="{{ showImportSummary }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:18px; margin-bottom:14px;">
+              <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:14px;">
+                <div><div style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:600;">{{ importSummary.totalRows }}</div><div style="font-size:11px; color:#94A3B8;">Total rows</div></div>
+                <div><div style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:600; color:#047857;">{{ importSummary.validRows }}</div><div style="font-size:11px; color:#94A3B8;">Valid</div></div>
+                <div><div style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:600; color:#BE123C;">{{ importSummary.invalidRows }}</div><div style="font-size:11px; color:#94A3B8;">Invalid</div></div>
+                <div><div style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:600; color:#B45309;">{{ importSummary.skippedAsDuplicate }}</div><div style="font-size:11px; color:#94A3B8;">Duplicates skipped</div></div>
+              </div>
+              <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+                <thead><tr>
+                  <th style="text-align:left; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:6px 0; border-bottom:1px solid #E5E7EB;">Row</th>
+                  <th style="text-align:left; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:6px 0; border-bottom:1px solid #E5E7EB;">Admission No.</th>
+                  <th style="text-align:left; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:#94A3B8; padding:6px 0; border-bottom:1px solid #E5E7EB;">Result</th>
+                </tr></thead>
+                <tbody>
+                  <sc-for list="{{ importSummary.results }}" as="r" hint-placeholder-count="6">
+                    <tr>
+                      <td style="padding:7px 0; border-bottom:1px solid #F1F5F9; font-family:'JetBrains Mono',monospace;">{{ r.rowNumber }}</td>
+                      <td style="padding:7px 0; border-bottom:1px solid #F1F5F9; font-family:'JetBrains Mono',monospace;">{{ r.admissionNumber }}</td>
+                      <td style="padding:7px 0; border-bottom:1px solid #F1F5F9;"><span style="font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; background:{{ r.bg }}; color:{{ r.text }};">{{ r.label }}</span></td>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+              <div style="display:flex; justify-content:flex-end; margin-top:14px;">
+                <button onclick="{{ commitImport }}" style="font:inherit; font-size:13px; font-weight:600; padding:9px 18px; border-radius:6px; border:none; background:#1E3A8A; color:#fff; cursor:pointer;">Confirm and import {{ importSummary.validRows }} students</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ importCommitted }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:12px 14px; border-radius:6px; background:#ECFDF5; border:1px solid #A7F3D0; font-size:13px; color:#047857; font-weight:600;">{{ importSummary.validRows }} students imported into JSS 1A, JSS 2B and SSS 1C.</div>
+          </sc-if>
+        </sc-if>
+
+        <!-- STEP 5: REVIEW -->
+        <sc-if value="{{ isStep5 }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:0 0 4px; font-size:24px; font-weight:700; letter-spacing:-0.01em;">You're ready to go</h2>
+          <div style="font-size:13.5px; color:#64748B; margin-bottom:24px;">Here's what we've set up for Graceland International Academy.</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:12px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:14px 16px;">
+              <div style="width:32px; height:32px; border-radius:6px; background:#ECFDF5; display:flex; align-items:center; justify-content:center; flex:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+              <div><div style="font-size:13.5px; font-weight:600;">School profile</div><div style="font-size:12px; color:#64748B;">Graceland International Academy · GIA admission code</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:14px 16px;">
+              <div style="width:32px; height:32px; border-radius:6px; background:#ECFDF5; display:flex; align-items:center; justify-content:center; flex:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+              <div><div style="font-size:13.5px; font-weight:600;">Session &amp; term</div><div style="font-size:12px; color:#64748B;">2025/2026 · Term 1 active</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:14px 16px;">
+              <div style="width:32px; height:32px; border-radius:6px; background:#ECFDF5; display:flex; align-items:center; justify-content:center; flex:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+              <div><div style="font-size:13.5px; font-weight:600;">Class groups</div><div style="font-size:12px; color:#64748B;">{{ classCount }} classes across 4 education levels</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:8px; padding:14px 16px;">
+              <div style="width:32px; height:32px; border-radius:6px; background:{{ importCommitted ? '#ECFDF5' : '#FFFBEB' }}; display:flex; align-items:center; justify-content:center; flex:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ importCommitted ? '#047857' : '#B45309' }}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+              <div><div style="font-size:13.5px; font-weight:600;">Student import</div><div style="font-size:12px; color:#64748B;">{{ importStatusLabel }}</div></div>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+    </div>
+
+    <!-- Footer nav -->
+    <div style="border-top:1px solid #E5E7EB; background:#FFFFFF; padding:16px 56px; display:flex; align-items:center; gap:12px;">
+      <sc-if value="{{ canGoBack }}" hint-placeholder-val="{{ false }}">
+        <button onclick="{{ goBack }}" style="font:inherit; font-size:13.5px; font-weight:600; padding:10px 18px; border-radius:6px; border:1px solid #E5E7EB; background:#FFFFFF; color:#1E293B; cursor:pointer;">Back</button>
+      </sc-if>
+      <sc-if value="{{ isLastStep }}" hint-placeholder-val="{{ false }}">
+        <button style="margin-left:auto; font:inherit; font-size:13.5px; font-weight:600; padding:10px 22px; border-radius:6px; border:none; background:#1E3A8A; color:#fff; cursor:pointer;">Go to dashboard</button>
+      </sc-if>
+      <sc-if value="{{ showContinue }}" hint-placeholder-val="{{ true }}">
+        <button onclick="{{ goNext }}" style="margin-left:auto; font:inherit; font-size:13.5px; font-weight:600; padding:10px 22px; border-radius:6px; border:none; background:#1E3A8A; color:#fff; cursor:pointer;">Continue</button>
+      </sc-if>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const STEP_LABELS = ['School profile', 'Session & term', 'Class groups', 'Import students', 'Review & finish'];
+
+const LEVEL_DRAFTS = [
+  { name: 'Creche', arms: ['A'] },
+  { name: 'Playgroup 1', arms: ['A'] },
+  { name: 'JSS 1', arms: ['A', 'B'] },
+  { name: 'JSS 2', arms: ['A', 'B'] },
+];
+
+const IMPORT_ROWS = [
+  { rowNumber: 2, admissionNumber: 'GIA/26/0041', valid: true, dup: false },
+  { rowNumber: 3, admissionNumber: 'GIA/26/0042', valid: true, dup: false },
+  { rowNumber: 4, admissionNumber: '—', valid: false, dup: false },
+  { rowNumber: 5, admissionNumber: 'GIA/26/0043', valid: true, dup: false },
+  { rowNumber: 6, admissionNumber: 'GIA/26/0018', valid: true, dup: true },
+  { rowNumber: 7, admissionNumber: 'GIA/26/0044', valid: true, dup: false },
+];
+
+class Component extends DCLogic {
+  state = { step: 1, showImportSummary: false, importCommitted: false };
+
+  renderVals() {
+    const { step, showImportSummary, importCommitted } = this.state;
+
+    const steps = STEP_LABELS.map((label, i) => {
+      const n = i + 1;
+      const done = n < step;
+      const active = n === step;
+      return {
+        label,
+        bg: active ? '#EFF6FF' : 'transparent',
+        textColor: active ? '#1E3A8A' : (done ? '#1E293B' : '#94A3B8'),
+        dotBg: done ? '#1E3A8A' : (active ? '#1E3A8A' : '#F1F5F9'),
+        dotText: done || active ? '#fff' : '#94A3B8',
+        dotContent: done ? '\u2713' : String(n),
+      };
+    });
+
+    const classCount = LEVEL_DRAFTS.reduce((n, l) => n + l.arms.length, 0);
+
+    const importSummary = {
+      totalRows: IMPORT_ROWS.length,
+      validRows: IMPORT_ROWS.filter(r => r.valid).length,
+      invalidRows: IMPORT_ROWS.filter(r => !r.valid).length,
+      skippedAsDuplicate: IMPORT_ROWS.filter(r => r.dup).length,
+      results: IMPORT_ROWS.map(r => ({
+        rowNumber: r.rowNumber,
+        admissionNumber: r.admissionNumber,
+        label: !r.valid ? 'Invalid' : (r.dup ? 'Duplicate' : 'Valid'),
+        bg: !r.valid ? '#FFF1F2' : (r.dup ? '#FFFBEB' : '#ECFDF5'),
+        text: !r.valid ? '#BE123C' : (r.dup ? '#B45309' : '#047857'),
+      })),
+    };
+
+    return {
+      currentStep: step,
+      isStep1: step === 1,
+      isStep2: step === 2,
+      isStep3: step === 3,
+      isStep4: step === 4,
+      isStep5: step === 5,
+      steps,
+      levelDrafts: LEVEL_DRAFTS,
+      classCount,
+      fileName: showImportSummary || importCommitted ? 'GIA-student-roster.csv' : 'No file selected yet',
+      showImportSummary,
+      importSummary,
+      importCommitted,
+      importStatusLabel: importCommitted ? importSummary.validRows + ' students imported' : 'Not yet imported',
+      runDryRun: () => this.setState({ showImportSummary: true }),
+      commitImport: () => this.setState({ importCommitted: true }),
+      canGoBack: step > 1,
+      isLastStep: step === 5,
+      showContinue: step < 5,
+      goBack: () => this.setState(s => ({ step: Math.max(1, s.step - 1) })),
+      goNext: () => this.setState(s => ({ step: Math.min(5, s.step + 1) })),
+    };
+  }
+}
+
+</script>
+</body>
+</html>
